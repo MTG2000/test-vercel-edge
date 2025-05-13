@@ -1,16 +1,13 @@
 {
-	"compilerOptions": {
-		"target": "ESNext",
-		"module": "ESNext",
-		"moduleResolution": "Bundler",
-		"allowSyntheticDefaultImports": true,
-		"esModuleInterop": true,
-		"jsx": "react-jsx",
-		"allowJs": true,
-		"checkJs": true,
-		"noEmit": true,
-		"allowImportingTsExtensions": true,
-		"types": ["vinxi/client"],
-		"isolatedModules": true
-	}
+  "extends": "./tsconfig.base.json",
+  "include": ["**/*.ts", "**/*.tsx"],
+  "exclude": ["node_modules", "vite.config.ts"],
+  "references": [{ "path": "./tsconfig.node.json" }],
+  "compilerOptions": {
+    "paths": {
+      "#app/*": ["./app/*"],
+      "#lib/*": ["./lib/*"],
+      "#gen/*": ["./__generated__/*"]
+    }
+  }
 }
