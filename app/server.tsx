@@ -1,3 +1,6 @@
+
+const promise = Promise.withResolvers<void>();
+
 export default async function handler(request: Request): Promise<Response> {
   if (request.method !== 'GET') {
     return new Response(null, { status: 204 })
